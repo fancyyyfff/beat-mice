@@ -1,0 +1,124 @@
+body {
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.groud {
+    display: flex;
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #018001;
+    margin: 20px auto;
+    flex-direction: row;
+
+    justify-content: center;
+    /* 会让盒子均匀分布,不贴边 */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.groud .home {
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #febc5b;
+    margin: 30px;
+    top: 40px;
+
+}
+
+.small {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 50px;
+    background-color: #b04040;
+    /* 控制圆角形状，使其成为椭圆 */
+    /* border-radius: 50%/100% 50% 0% 0%; */
+    border-radius: 40px 40px 0 0;
+    /* 隐藏超出椭圆范围的部分 */
+    overflow: hidden;
+}
+
+.big {
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    /* 使元素向左移自身的50% */
+    transform: translateX(-50%);
+    width: 80px;
+    height: 65px;
+    background-color: #b04040;
+
+    /* 控制圆角形状，使其成为椭圆 */
+    border-radius: 50% 50% 0% 0%;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.btn {
+    /* display: flex; */
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 80px;
+    background-color: skyblue;
+}
+
+.btn .start,
+.stop {
+    width: 50%;
+    /* 实现按钮盒子居中对齐 */
+    /* 调节宽度 */
+    margin: auto;
+    /* 文字的高度：设置到和外面的盒子一样 */
+    line-height: 80px;
+    /* 按钮字体大小 */
+    font-size: 2rem;
+    text-align: center;
+
+    background-color: transparent;
+    /* 按钮文本颜色 */
+    color: white;
+    /* 去除按钮边框 */
+    border: none;
+    /* 鼠标样式为手型 */
+    cursor: pointer;
+    /* 去除按钮点击时的外边框 */
+    outline: none;
+}
+
+.start {
+    display: block;
+}
+
+.stop {
+    display: none;
+}
+
+.timer {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 60px;
+    color: #ffff17;
+    text-shadow: 0 0 50px yellow;
+}
