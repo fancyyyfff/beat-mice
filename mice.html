@@ -134,56 +134,7 @@
 </head>
 
 <body>
-    <div class="groud">
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-        <div class="home">
-            <div class="small"></div>
-            <div class="big">鼠</div>
-        </div>
-    </div>
+    <div class="groud"></div>
 
     <div class="btn">
         <button class="start">开始</button>
@@ -195,6 +146,7 @@
     </p>
 
     <script>
+        
         /*
         1. 开始事件==》开始按钮消失，禁止按钮显示
 2. 生成随机数？？如何随机抽盒子来显示
@@ -207,6 +159,26 @@
         let home = document.querySelectorAll(".home")
         let timer = document.querySelector(".timer")
         let btn = document.querySelector(".btn")
+
+        // 当加载到js代码时就自动生成多个老鼠的元素
+        const groud = document.querySelector(".groud")
+        const miceCount=12
+        for (let index = 0; index < miceCount; index++) {
+            const home = document.createElement("div")
+            home.classList.add("home")
+            
+            const small = document.createElement("div")
+            small.classList.add("small")
+
+            const big = document.createElement("div")
+            big.classList.add("big")
+            big.textContent="鼠"
+
+            home.append(small)
+            home.append(big)
+            groud.append(home)         
+        }
+
         mice = Array.from(home)
         // 隐藏所有的大老鼠，显示所有的小老鼠
         let init = function () {
@@ -221,6 +193,9 @@
         let random = 0;
         let timerId;
         let second = 0;
+
+        
+
         start.addEventListener("click", () => {
             init()
             // 清空原来的计时文本
